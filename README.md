@@ -8,6 +8,32 @@ Powershell scripts to auto install several tools on a fresh Windows 11 OS. The c
 - run "auto-install.ps1"
 - look at the RED colour texts to see if there were errors during the installation
 
+# supported tools
+Currently, these tools are installed. If you won't want it to install a tool, comment out a tool by placing a # sign infront of it
+
+```bash
+$appsToInstall = @{
+    # === Tools ====
+    notepadplusplus = { Install-Full-NotepadPlusPlus } # https://notepad-plus-plus.org/
+    totalcommander  = { Install-TotalCommander }       # https://www.ghisler.com/
+    wireshark       = { Install-Wireshark }            # https://www.wireshark.org/
+
+    # === Coding ===
+    git             = { Install-Git }                  # https://git-scm.com/install/windows/
+    python3         = { Install-Python3 }              # https://www.python.org/
+    vscode          = { Install-Full-VSCode }          # https://code.visualstudio.com/
+
+    # === Browsers ===
+    firefox         = { Install-Firefox }              # https://www.firefox.com/en-US/download/all/
+
+    # === Digital Forensics ===
+    hxd             = { Install-HxD }                  # https://mh-nexus.de/en/hxd/
+    autopsy         = { Install-Autopsy }              # https://www.sleuthkit.org/autopsy/
+    sleuthkit       = { Install-Sleuthkit }            # https://www.sleuthkit.org/sleuthkit/
+    zimmermanTools  = { Install-ZimmermanTools }       # https://ericzimmerman.github.io/
+}
+```
+
 # notes
 - Running the powershelgl script requires administrative privileges 
 - VScode installation also installs few extensions:
